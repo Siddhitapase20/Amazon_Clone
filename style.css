@@ -33,8 +33,8 @@
 /** Box-2 **/
 .add-first{
     color:#CCCCCC;
-    height:14ppx;
-    margin-left: 18px;;
+    height:14px;
+    margin-left: 18px;
 
 }
 
@@ -123,10 +123,113 @@
     width:70%;
     font-size: 0.85rem;
 }
+.border-white:hover{
+    border: 2px solid white;
+    padding: 4px;
+}
+.panel-all:hover{
+    border: 2px solid white;
+    padding: 4px;
+}
+    
 .panel-deals{
     font-size: 0.9rem;
     font-weight:700;
 }
+
+/* slidebar navigation */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5; /* Lower than the content box (20) */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.sidebar-overlay.sidebar-show {
+    opacity: 1;
+    visibility: visible;
+}
+.sidebar{
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    position: fixed;
+    z-index: 10;
+    background-color: transparent;
+    transform: translateX(-100%);
+    width: 100%;
+    transition: transform 0.3s ;
+}
+.sidebar-show{
+    transform: translateX(0);
+}
+.sidebar-open-btn{
+    cursor: pointer;
+}
+.sidebar-left-part{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index: 20;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out ;
+    background-color: white;
+    width: 365px;
+    height:100%;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.8); 
+    box-sizing: border-box;
+    transform: translateX(0);
+}
+.sidebar-top{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    padding:12px;
+    padding-left: 30px;
+    background-color: black;
+    color: white;
+}
+.sidebar-top h2{
+    font-size: 22px;;
+    margin:0;
+}
+.sidebar-top i{
+    padding-right: 10px;
+    font-size: 25px;;
+}
+.sidebar-item{
+    padding-left: 30px;
+    border-top: 1.5px solid #CCCCCC;
+}
+.sidebar-item h2{font-size: 20px;
+}
+.sidebar-item p{
+    color: rgb(65, 62, 62);
+}
+#sidebar-close{
+    position: absolute;
+    top:15px;
+    left:380px;
+    z-index:99999;
+    background-color: red;
+    font-size: 30px;
+    border: none;
+    color: white;
+    padding:0;
+    cursor: pointer;
+}
+#sidebar-close i{
+    font-size: 35px;
+}
+
+
+
 
 /**hero-section**/
 .hero-section{
@@ -146,6 +249,7 @@
 }
 .image-list{
     display: flex;
+    overflow: hidden;
 }
 .hero-btn{
     top:0;
@@ -170,12 +274,13 @@
     background-color:white;
     height:40px;
     color: black;
-    display: flex;
+    position: absolute;
     align-items: center;
     justify-content: center;
+    text-align: center;
     font-size: 0.85rem;
-    width:80%;
-    margin-bottom: 25px;
+    width:60%;
+    bottom: 25px;
     
 
 }
